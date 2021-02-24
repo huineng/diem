@@ -44,6 +44,6 @@ jobs:
 
       - name: Deploy to NPM
         run: |
-          npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
+          npm config set //registry.npmjs.org/:_authToken ${secrets.NPM_TOKEN}
           npm publish --ignore-scripts
         if: github.event_name == 'push' && ( github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' )
