@@ -1,7 +1,7 @@
 {
     "name": "@mydiem/diem-angular-util",
     "description": "Diem Angular Base Utilities",
-    "version": "2.0.0",
+    "version": "1.9.9",
     "author": "guy_huinen@be.ibm.com",
     "bugs": "https://github.ibm.com/CIO-SETS/leap-dashboard/issues",
     "devDependencies": {
