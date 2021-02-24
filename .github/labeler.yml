@@ -1,2 +1,4 @@
-dahsboard:
+dashboard:
   - applications/dashboard/**/*
+diem-common:
+  - packages/diem-common/**/*
