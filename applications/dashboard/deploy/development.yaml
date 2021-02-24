@@ -1,0 +1,69 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: dashboard-ui
+  namespace: default
+  labels:
+    app: dashboard-ui
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dashboard-ui
+      tier: backend
+  template:
+    metadata:
+      name: dashboard-ui
+      labels:
+        app: dashboard-ui
+        tier: backend
+        version: "1"
+    spec:
+      imagePullSecrets:
+        - name: regsecret
+      containers:
+        - name: dashboard-ui
+          image: 127.0.0.1:30500/bizops/dashboard-ui:latest
+          resources: {}
+          terminationMessagePath: "/dev/termination-log"
+          terminationMessagePolicy: File
+          imagePullPolicy: Always
+          securityContext:
+            privileged: false
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sleep", "15"]
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: dashboard-ui
+  labels:
+    app: dashboard-ui
+    tier: backend
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8192
+  selector:
+    app: dashboard-ui
+    tier: backend
+  type: ClusterIP
+  sessionAffinity: None
+status:
+  loadBalancer: {}

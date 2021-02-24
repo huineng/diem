@@ -1,0 +1,36 @@
+{
+    "name": "dashboard-ui",
+    "description": "Home Module for Leap",
+    "version": "0.1.0",
+    "author": "guy_huinen@be.ibm.com",
+    "config": {
+        "sitename": "Expo",
+        "containername": "127.0.0.1:30500/bizops/dashboard-ui",
+        "containernameprod": "us.icr.io/bizopstest/dashboard-ui",
+        "apppath": "/"
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "keywords": [
+        "bizops"
+    ],
+    "license": "ISC",
+    "private": true,
+    "scripts": {
+        "clean": "rimraf server",
+        "clean:front": "rimraf public/js ",
+        "docker:build": "docker build -t $npm_package_config_containername -f deploy/Dockerfile .",
+        "docker:build-local": "docker build -t $npm_package_config_containername -f deploy/Dockerfile.local .",
+        "docker:build-production": "docker build -t $npm_package_config_containernameprod -f deploy/Dockerfile .",
+        "docker:push": "docker push $npm_package_config_containername",
+        "docker:push-production": "docker push $npm_package_config_containernameprod",
+        "kube:dot": "node ../../common/k8s/dot",
+        "kube:init": "node ../../common/k8s/init",
+        "kube:init-prod": "node ../../common/k8s/init-prod",
+        "kube:local": "npm-run-all clean clean:front docker:build-local docker:push",
+        "kube:local-prod": "npm-run-all docker:build docker:push",
+        "kube:production": "npm-run-all docker:build-production docker:push-production",
+        "lock": "npm install --package-lock",
+        "start": "node --max-old-space-size=2048 app.js"
+    }
+}

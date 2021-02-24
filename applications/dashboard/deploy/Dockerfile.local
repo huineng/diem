@@ -1,0 +1,29 @@
+FROM node:12.10.0
+
+LABEL maintainer=guy_huinen@be.ibm.com
+LABEL com.ibm.service.name=leap
+LABEL com.ibm.service.component=cmr
+LABEL com.ibm.service.version=1
+LABEL com.ibm.service.component.version=1
+
+RUN \
+    sed -i 's/^PASS_MAX_DAYS.*/PASS_MAX_DAYS    90/' /etc/login.defs && \
+    sed -i 's/^PASS_MIN_DAYS.*/PASS_MIN_DAYS    1/' /etc/login.defs && \
+    sed -i 's/sha512/sha512 minlen=8/' /etc/pam.d/common-password && \
+    apt-get clean && apt-get update && apt-get install -y locales && \
+    sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+    dpkg-reconfigure --frontend=noninteractive locales && \
+    update-locale LANG=en_US.UTF-8
+
+ENV LANG=en_US.UTF-8 HOME=/home/app NODE_ENV=development
+
+ADD .npmrc package.json package-lock.json gulpfile.js webpack.config.js $HOME/
+RUN cd $HOME && npm ci && npm audit fix
+
+RUN rm -f $HOME/.npmrc
+
+WORKDIR $HOME
+ADD public $HOME/public
+COPY sqldb_ssl_245.arm $HOME/server/
+
+CMD npm run build:local

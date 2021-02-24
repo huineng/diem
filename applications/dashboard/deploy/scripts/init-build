@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+BUILD_DIR=/tmp/build
+
+echo "leap rfb init build running..."
+
+# Copy all necessary resrouces to $BUILD_DIR which are needed for the Dockerfile
+
+cp ./deploy/Dockerfile $BUILD_DIR
+cp ./deploy/deployment.yaml $BUILD_DIR/deployment.yaml
+cp ./deploy/config.yaml.template $BUILD_DIR/config.yaml
+cp ./deploy/secret.yaml.template $BUILD_DIR/secret.yaml
+
+cp package.json $BUILD_DIR
+cp package-lock.json $BUILD_DIR
+cp app.js $BUILD_DIR
+
+printf "%b\n\n" "rfb init build completed"

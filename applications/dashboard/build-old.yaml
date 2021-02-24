@@ -1,0 +1,11 @@
+before_install:
+  - conveyor artifactory init -s sets
+
+install:
+  - npm ci && npm audit fix
+
+script:
+  - docker build -f deploy/Dockerfile -t dashboard-ui:latest .
+
+deploy:
+  - conveyor release -a bizops -c bizops-dashboard-ui -d -p -t docker -i latest -m applications/dashboard-ui -e ${TARGET_ENV} -n dashboard-ui
