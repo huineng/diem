@@ -1,7 +1,7 @@
 {
     "name": "@mydiem/diem-common",
     "description": "Diem Common",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "author": "guy_huinen@be.ibm.com",
     "bugs": "https://github.ibm.com/CIO-SETS/etl-manager/issues",
     "devDependencies": {
