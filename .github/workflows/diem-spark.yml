@@ -8,11 +8,11 @@ on:
   push:
     branches: [main]
     paths:
-      - "applications/diem-spark/**/**"
+      - "applications/diem-spark/**"
   pull_request:
     branches: [main]
     paths:
-      - "applications/diem-spark/**/**"
+      - "applications/diem-spark/**"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -34,7 +34,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Login to quay.io
-        run: docker login -u="diem+ibm_deploy_robot" -p="${{DOCKER_QUAY}}" quay.io
+        run: docker login -u="diem+ibm_deploy_robot" -p="${{secrets.DOCKER_QUAY}}" quay.io
 
       - name: Build the Docker image
         run: docker build . --file deploy/Dockerfile-spark-py-3.0.0 --tag quay.io/diem/pyspark:3.0.0
