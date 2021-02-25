@@ -68,7 +68,7 @@ jobs:
       - name: Get Commit Message
         run: |
           MSG=$(git log --format=%B -n 1 ${{ github.event.after }})
-          echo "::set-env name=COMMIT_MESSAGE::${MSG}"
+          echo "${MSG}"
 
       - uses: 8398a7/action-slack@v3
         with:
