@@ -35,6 +35,8 @@ jobs:
 
       - uses: 8398a7/action-slack@v3
         with:
+          status: custom
+          fields: all
           username: "Diem CI UN"
           icon_emoji: ":diem:"
           channel: "#diem-ci"
