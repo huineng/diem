@@ -1,0 +1,10 @@
+FROM quay.io/diem/base-spark:3.0.0
+
+COPY db2-jars/* /opt/spark/jars/
+COPY stocator/* /opt/spark/jars/
+
+WORKDIR /opt/
+
+USER root
+
+RUN chmod -R 775 .
