@@ -2,9 +2,9 @@
 FROM quay.io/diem/base-pyspark:3.0.0
 
 LABEL   maintainer=guy_huinen@be.ibm.com \
-        org.label-schema.description = "Spark Image for Diem" \
-        org.label-schema.name = "spark" \
-        org.label-schema.version = 3.0.0
+        org.label-schema.description="Spark Image for Diem" \
+        org.label-schema.name="spark" \
+        org.label-schema.version=3.0.0
 
 ARG BUILD_DATE
 LABEL org.label-schema.build-date=$BUILD_DATE
