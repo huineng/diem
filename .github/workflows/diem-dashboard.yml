@@ -52,11 +52,11 @@ jobs:
               },
               {
                 color: 'good',
-                text: `${toJSON(process.env)}`,
+                text: `${toJson(process.env)}`,
               },
               {
                 color: 'good',
-                text: `${toJSON(github.event)}`,
+                text: `${toJson(github.event)}`,
               }]
             }
         env:
