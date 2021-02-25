@@ -33,5 +33,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Login to quay.io
+        run: docker login -u="diem+ibm_deploy_robot" -p="${{DOCKER_QUAY}}" quay.io
+
       - name: Build the Docker image
         run: docker build . --file deploy/Dockerfile-spark-py-3.0.0 --tag quay.io/diem/pyspark:3.0.0
+
+      - name: Push the Docker image
+        run: docker push quay.io/diem/pyspark:3.0.0
