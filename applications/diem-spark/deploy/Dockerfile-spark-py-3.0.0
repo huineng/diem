@@ -1,4 +1,4 @@
-# v3.0.0_2021-02-25_1
+# v3.0.0_2021-02-25_2
 FROM quay.io/diem/base-pyspark:3.0.0
 
 COPY db2-jars/* /opt/spark/jars/
