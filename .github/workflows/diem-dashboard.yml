@@ -42,9 +42,7 @@ jobs:
         run: echo "$STEPS_CONTEXT"
 
       - name: Dump env
-        env:
-          ENV_CONTEXT: ${{ toJson(process.env) }}
-        run: echo "$ENV_CONTEXT"
+        run: env
 
       - uses: 8398a7/action-slack@v3
         with:
