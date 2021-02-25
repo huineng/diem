@@ -1,5 +1,13 @@
-# v3.0.0_2021-02-25_4
+# v3.0.0_2021-02-25_1
 FROM quay.io/diem/base-pyspark:3.0.0
+
+LABEL   maintainer=guy_huinen@be.ibm.com \
+        org.label-schema.description="Spark Image for Diem" \
+        org.label-schema.name="spark" \
+        org.label-schema.version=$BUILD_VERSION
+
+ARG BUILD_DATE
+LABEL org.label-schema.build-date=$BUILD_DATE
 
 COPY db2-jars/* /opt/spark/jars/
 COPY stocator/* /opt/spark/jars/
