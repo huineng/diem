@@ -36,7 +36,7 @@ jobs:
       - uses: 8398a7/action-slack@v3
         with:
           fields: repo,commit
-          tatus: ${{ job.status }}
+          status: ${{ job.status }}
           icon_emoji: ":diem:"
           channel: "#diem-ci"
         env:
