@@ -44,6 +44,10 @@ jobs:
         env:
           JOB_CONTEXT: ${{ toJSON(job) }}
         run: echo "$JOB_CONTEXT"
+      - name: Dump env context
+        env:
+          ENV_CONTEXT: ${{ toJSON(job) }}
+        run: echo "$ENV_CONTEXT"
       - name: Dump steps context
         env:
           STEPS_CONTEXT: ${{ toJSON(steps) }}
@@ -60,6 +64,11 @@ jobs:
         env:
           MATRIX_CONTEXT: ${{ toJSON(matrix) }}
         run: echo "$MATRIX_CONTEXT"
+
+      - name: Get Commit Message
+        run: |
+          MSG=$(git log --format=%B -n 1 ${{ github.event.after }})
+          echo "::set-env name=COMMIT_MESSAGE::${MSG}"
 
       - uses: 8398a7/action-slack@v3
         with:
