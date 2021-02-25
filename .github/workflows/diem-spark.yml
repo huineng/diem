@@ -34,7 +34,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Login to quay.io
-        run: echo "secrets.DOCKER_QUAY" | docker login -u="diem+ibm_deploy_robot" --password-stdin
+        run: echo "secrets.DOCKER_QUAY" | docker login -u="diem+ibm_deploy_robot" --password-stdin quay.io
 
       - name: Build the Docker image
         run: docker build . --file deploy/Dockerfile-spark-py-3.0.0 --tag quay.io/diem/pyspark:3.0.0
