@@ -8,18 +8,18 @@ on:
   push:
     branches: [main]
     paths:
-      - "applications/spark/**"
+      - "applications/diem-spark/**"
   pull_request:
     branches: [main]
     paths:
-      - "applications/spark/**"
+      - "applications/diem-spark/**"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 defaults:
   run:
-    working-directory: applications/spark
+    working-directory: applications/diem-spark
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
