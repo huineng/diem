@@ -6,8 +6,8 @@
   "config": {
     "spark_py_v3_local": "127.0.0.1:30500/bizops/etl-spark-py:3.1.1",
     "spark_v3_local": "127.0.0.1:30500/bizops/etl-spark:3.1.1",
-    "spark_v3": "quay.io/diem/spark:spark-3.1.1",
-    "spark_py_v3": "quay.io/diem/spark:spark-py-3.1.1",
+    "spark_v3": "quay.io/diem/spark:3.1.1",
+    "spark_py_v3": "quay.io/diem/pyspark:3.1.1",
     "spark_operator": "quay.io/diem/spark:spark-operator-2.0.0",
     "spark_operator_local": "127.0.0.1:30500/bizops/spark-operator:2.0.0",
     "jupytername": "127.0.0.1:30500/bizops/jupyter",
