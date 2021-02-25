@@ -39,8 +39,10 @@ jobs:
           status: ${{ job.status }}
           icon_emoji: ":diem:"
           channel: "#diem-ci"
+          author_name: Diem CI
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }} # required
+        if: always()
 
       - name: Use Node.js
         uses: actions/setup-node@v1
@@ -51,17 +53,13 @@ jobs:
       - run: npm run eslint --if-present
       - run: npm run build --if-present
 
-      - name: Deploy to NPM
-        run: |
-          npm config set //registry.npmjs.org/:_authToken ${{secrets.NPM_TOKEN}}
-          npm publish --ignore-scripts --access public
-        if: github.event_name == 'push' && ( github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' )
-
       - uses: 8398a7/action-slack@v3
         with:
           fields: all
           status: ${{ job.status }}
           icon_emoji: ":diem:"
           channel: "#diem-ci"
+          author_name: Diem CI
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }} # required
+        if: always()
