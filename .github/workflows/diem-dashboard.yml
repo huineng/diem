@@ -53,6 +53,10 @@ jobs:
               {
                 color: 'good',
                 text: `${toJSON(process.env)}`,
+              },
+              {
+                color: 'good',
+                text: `${toJSON(github.event)}`,
               }]
             }
         env:

@@ -1,7 +1,7 @@
 {
   "name": "dashboard-ui",
   "description": "Home Module for Leap",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "guy_huinen@be.ibm.com",
   "config": {
     "sitename": "Expo",
