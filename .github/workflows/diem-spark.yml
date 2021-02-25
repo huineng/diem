@@ -8,11 +8,11 @@ on:
   push:
     branches: [main]
     paths:
-      - "applications/diem-spark/**"
+      - "applications/diem-spark/**/**"
   pull_request:
     branches: [main]
     paths:
-      - "applications/diem-spark/**"
+      - "applications/diem-spark/**/**"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
