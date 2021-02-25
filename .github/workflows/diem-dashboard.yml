@@ -36,13 +36,14 @@ jobs:
           # We need to fetch with a depth of 2 for pull_request so we can do HEAD^2
           fetch-depth: 2
 
-      - name: Dump steps context
-        env:
-          STEPS_CONTEXT: ${{ toJson(steps) }}
-        run: echo "$STEPS_CONTEXT"
-
       - name: Dump env
         run: env
+
+      - name: Dump github
+        run: github
+
+      - name: Dump job
+        run: job
 
       - uses: 8398a7/action-slack@v3
         with:
