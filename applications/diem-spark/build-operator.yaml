@@ -1,0 +1,7 @@
+before_install:
+  - conveyor artifactory init -s sets
+script:
+  - docker login -u=$AF_USER -p="$AF_PWD" "txo-sets-docker-local.artifactory.swg-devops.com"
+  - docker build -f deploy/Dockerfile-spark-operator -t $DOCKER_REGISTRY/etl-mgr/spark-operator:$(cat version-spark-operator.txt) .
+deploy:
+  - docker push $DOCKER_REGISTRY/etl-mgr/spark-operator:$(cat version-spark-operator.txt)|| checkForStepFailure $? "docker push"
