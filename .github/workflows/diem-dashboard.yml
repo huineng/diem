@@ -49,6 +49,7 @@ jobs:
               }]
             }
         env:
+          GITHUB_TOKEN: ${{ github.token }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }} # required
         if: always()
 
@@ -70,4 +71,5 @@ jobs:
           author_name: Diem CI
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }} # required
+          GITHUB_TOKEN: ${{ github.token }}
         if: always()
