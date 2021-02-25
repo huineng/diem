@@ -36,6 +36,16 @@ jobs:
           # We need to fetch with a depth of 2 for pull_request so we can do HEAD^2
           fetch-depth: 2
 
+      - name: Dump steps context
+        env:
+          STEPS_CONTEXT: ${{ toJson(steps) }}
+        run: echo "$STEPS_CONTEXT"
+
+      - name: Dump env
+        env:
+          ENV_CONTEXT: ${{ toJson(process.env) }}
+        run: echo "$ENV_CONTEXT"
+
       - uses: 8398a7/action-slack@v3
         with:
           status: custom
@@ -49,14 +59,6 @@ jobs:
               attachments: [{
                 color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
                 text: `${process.env.AS_WORKFLOW} of ${process.env.AS_AUTHOR.split(/[<@]/)[1]}'s "${process.env.AS_MESSAGE}" in ${process.env.AS_REF.replace('refs/heads/', '')} ${'${{ job.status }}' === 'success' ? 'succeeded' : '${{ job.status }}' === 'failure' ? 'failed' : '${{ job.status }}'} in ${process.env.AS_TOOK}`,
-              },
-              {
-                color: 'good',
-                text: `${toJson(process.env)}`,
-              },
-              {
-                color: 'good',
-                text: `${toJson(github.event)}`,
               }]
             }
         env:
