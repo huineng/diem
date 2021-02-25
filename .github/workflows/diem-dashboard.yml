@@ -40,10 +40,10 @@ jobs:
         run: env
 
       - name: Dump github
-        run: github
+        run: ${{ github }}
 
       - name: Dump job
-        run: job
+        run: ${{ job }}
 
       - uses: 8398a7/action-slack@v3
         with:
