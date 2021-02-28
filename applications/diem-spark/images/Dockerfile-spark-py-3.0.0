@@ -9,8 +9,7 @@ LABEL   maintainer=guy_huinen@be.ibm.com \
 ARG BUILD_DATE
 LABEL org.label-schema.build-date=$BUILD_DATE
 
-COPY db2-jars/* /opt/spark/jars/
-COPY stocator/* /opt/spark/jars/
+COPY jars/* /opt/spark/jars/
 
 WORKDIR /opt/
 

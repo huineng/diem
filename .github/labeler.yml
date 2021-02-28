@@ -8,3 +8,5 @@ diem-util:
   - packages/diem-util/**/*
 diem-forms:
   - packages/diem-forms/**/*
+diem-spark:
+  - applications/diem-spark/**/*
