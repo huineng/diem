@@ -10,11 +10,12 @@
 <img alt="Webpack" src="https://img.shields.io/badge/webpack%20-%238DD6F9.svg?&style=for-the-badge&logo=webpack&logoColor=black" />
 <img alt="Docker" src="https://img.shields.io/badge/docker%20-%230db7ed.svg?&style=for-the-badge&logo=docker&logoColor=white"/>
 <img alt="Kubernetes" src="https://img.shields.io/badge/kubernetes%20-%23326ce5.svg?&style=for-the-badge&logo=kubernetes&logoColor=white"/>
-</br>
+<br/><br/>
 [![GitHub issues](https://img.shields.io/github/issues/IBM/diem)](https://github.com/IBM/diem/issues)
 [![GitHub forks](https://img.shields.io/github/forks/IBM/diem)](https://github.com/IBM/diem/network)
 [![GitHub stars](https://img.shields.io/github/stars/IBM/diem)](https://github.com/IBM/diem/stargazers)
 [![GitHub license](https://img.shields.io/github/license/IBM/diem)](https://github.com/IBM/diem/blob/main/LICENSE)
+
 > Python, Spark, REST, Scala, Pipelines, Scheduling, API, Custom Jobs, SQL Statements, Openshift, Cloud Native, Machine Learning, Sendgrid, Kubernetes, Slack, Cloud Object Storage, JDBC, Box
 
 Diem can be used to create, display, execute and maintain data transfers between hardware and database platforms. It will cover how to create and manage transfers and assign them to a schedule to execute regularly without human intervention.
