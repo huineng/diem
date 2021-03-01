@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
-# DIEM 5.1
+# DIEM 5.2
 
 [![GitHub issues](https://img.shields.io/github/issues/IBM/diem)](https://github.com/IBM/diem/issues)
 [![GitHub forks](https://img.shields.io/github/forks/IBM/diem)](https://github.com/IBM/diem/network)
