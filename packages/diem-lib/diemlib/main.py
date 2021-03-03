@@ -132,9 +132,9 @@ def error(err):
 
     etype, value, tb = sys.exc_info()
     extract = traceback.extract_tb(tb)[0]
-    msg = f"Error: {str(e)} - line: {extract[1]} - type: {type(e).__name__} - stack: {extract[3]}"
+    msg = f"Error: {str(err)} - line: {extract[1]} - type: {type(err).__name__} - stack: {extract[3]}"
 
-    if config__isservice:
+    if config.__isservice:
         print(msg)
     else:
         data = {
