@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI diemlib
+name: CI diem-lib
 
 # Controls when the action will run.
 on:
@@ -8,18 +8,18 @@ on:
   push:
     branches: [main]
     paths:
-      - "packages/diemlib/**"
+      - "packages/diem-lib/**"
   pull_request:
     branches: [main]
     paths:
-      - "packages/diemlib/**"
+      - "packages/diem-lib/**"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 defaults:
   run:
-    working-directory: packages/diemlib
+    working-directory: packages/diem-lib
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
