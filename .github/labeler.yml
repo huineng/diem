@@ -10,3 +10,9 @@ diem-forms:
   - packages/diem-forms/**/*
 diem-spark:
   - applications/diem-spark/**/*
+nodepy:
+  - applications/diem-nodepy/**/*
+diem-core:
+  - applications/diem-core/**/*
+diem-help:
+  - applications/diem-help/**/*
