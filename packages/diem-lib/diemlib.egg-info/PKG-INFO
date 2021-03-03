@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
 Name: diemlib
-Version: 0.0.7
+Version: 0.0.8
 Summary: Python Utilities for DIEM
-Home-page: https://github.ibm.com/CIO-SETS/diem
+Home-page: https://github.com/IBM/diem/tree/main/packages/diemlib
 Author: Guy Huinen
 Author-email: guy_huinen@be.ibm.com
 License: MIT

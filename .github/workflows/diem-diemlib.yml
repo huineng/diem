@@ -51,5 +51,12 @@ jobs:
           # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-      - name: Build Python
+      - name: Build diemlib
         run: python3 setup.py clean --all && python3 setup.py bdist_wheel
+
+      - name: publish diemlib
+        env:
+          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        run: twine upload dist/*
+        if: github.event_name == 'push' && ( github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' )
