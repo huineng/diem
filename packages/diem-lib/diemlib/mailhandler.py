@@ -13,14 +13,13 @@ from sendgrid.helpers.mail import (
     Mail,
     Attachment,
     FileContent,
-    FileName,
     FileType,
     Disposition,
     ContentId,
 )
 from sendgrid import SendGridAPIClient
 import base64
-from diemlib.main import *
+from diemlib.main import error, out
 from diemlib.util import get_random_string
 import diemlib.config as config
 import mimetypes
@@ -94,7 +93,8 @@ class mailhandler(object):
         try:
 
             response = self.sg.send(message)
-            out(f"mail successfully sent - response status: {response.status_code}")
+            out(
+                f"mail successfully sent - response status: {response.status_code}")
 
         except Exception as e:
             error(e)

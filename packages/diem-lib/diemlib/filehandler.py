@@ -10,10 +10,10 @@
 
 import ibm_boto3
 import io
-from ibm_botocore.client import Config, ClientError
+from ibm_botocore.client import Config
 import pandas as pd
 from pathlib import Path
-from diemlib.main import *
+from diemlib.main import error
 
 
 class filehandler(object):
@@ -63,7 +63,8 @@ class filehandler(object):
 
         s3c = self.connect()
 
-        print(f"Starting large file upload for {file_name} to bucket: {self.Bucket}")
+        print(
+            f"Starting large file upload for {file_name} to bucket: {self.Bucket}")
         # set the chunk size to 5 MB
         part_size = 1024 * 1024 * 5
 
@@ -127,7 +128,6 @@ class filehandler(object):
 
             s3c = self.connect()
             obj = s3c.get_object(Bucket=self.Bucket, Key=file)
-            type = Path(file).suffix
 
             return io.BytesIO(obj["Body"].read())
 
@@ -152,7 +152,7 @@ class filehandler(object):
 
             savefile = file
 
-            if not filename is None:
+            if filename is not None:
                 savefile = filename
 
             g = self.loadFile(file)

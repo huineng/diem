@@ -12,7 +12,7 @@ from boxsdk import JWTAuth, Client
 from io import StringIO
 from pathlib import Path
 import pandas as pd
-from diemlib.main import *
+from diemlib.main import error
 
 
 class Box(object):

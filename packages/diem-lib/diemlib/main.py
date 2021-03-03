@@ -11,7 +11,6 @@
 import requests
 import time
 import json
-import os
 import datetime
 import sys
 from sys import exit
@@ -28,7 +27,8 @@ def UtcNow():
 
 
 def runTime():
-    # Returns the elapsed time between function call and the start time of the job
+    # Returns the elapsed time between function call
+    # and the start time
     return time.time() - config.__starttime
 
 
@@ -50,12 +50,12 @@ def mq(data):
             if isinstance(res, (dict)):
                 try:
                     data["out"] = json.dumps(res, separators=(",", ":"))
-                except:
+                except Exception:
                     data["out"] = "Response Json could not be parsed"
             elif not isinstance(res, (int, float, str, bool)):
                 try:
                     data["out"] = str(res)
-                except:
+                except Exception:
                     data["out"] = "Response must be booleam, number, string or json"
 
     except Exception as e:
@@ -78,7 +78,7 @@ def endJob(kwargs):
         Stopped = "Stopped"
         failMsg1 = "Missing Status Keyword"
         failMsg2 = "Status Field Should be of String Data Type"
-        failMsg3 = "Status Field Not set Properly. Allowed Values are (Completed,Failed,Stopped)"
+        failMsg3 = "Status Field Not set Properly. Allowed are (Completed,Failed,Stopped)"
         failMsg4 = "Out Field Should be of either a String or Object Type"
         failMsg5 = "Count Field Should be of String Data Type"
 
