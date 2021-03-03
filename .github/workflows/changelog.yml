@@ -2,7 +2,7 @@ name: CI - Changelog
 
 on:
   push:
-    branches: [main]
+    branches: [main_]
     paths-ignore:
       - "CHANGELOG.md"
 
