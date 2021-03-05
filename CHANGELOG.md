@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/huineng/diem/tree/HEAD)
+
+**Merged pull requests:**
+
+- chore: end for today [\#47](https://github.com/huineng/diem/pull/47)
+- chore: bump [\#46](https://github.com/huineng/diem/pull/46)
+- Gh [\#45](https://github.com/huineng/diem/pull/45)
+- A new testing fro the changelog [\#44](https://github.com/huineng/diem/pull/44)
+
 ## [v1.0.0](https://github.com/huineng/diem/tree/v1.0.0) (2021-03-05)
 
 **Merged pull requests:**
