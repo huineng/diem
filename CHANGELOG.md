@@ -4,6 +4,7 @@
 
 **Merged pull requests:**
 
+- chore: check [\#39](https://github.com/huineng/diem/pull/39)
 - chore: actions [\#38](https://github.com/huineng/diem/pull/38)
 - chore: fix python [\#37](https://github.com/huineng/diem/pull/37)
 - chore: test python [\#36](https://github.com/huineng/diem/pull/36)
