@@ -25,11 +25,11 @@ jobs:
           pullRequests: true
           prWoLabels: true
           bugLabels: "fix,bug"
+          unreleased: true
           enhancementLabels: "chore,style"
           addSections: '{"documentation":{"prefix":"**Documentation:**","labels":["documentation"]}}'
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update Changelog for PR
-          tagging_message: "v1.0.1"
           push_options: --force
           file_pattern: CHANGELOG.md
