@@ -24,7 +24,8 @@ jobs:
           issuesWoLabels: true
           pullRequests: true
           prWoLabels: true
-          unreleased: true
+          bugLabels: "fix,bug"
+          enhancementLabels: "chore,style"
           addSections: '{"documentation":{"prefix":"**Documentation:**","labels":["documentation"]}}'
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
