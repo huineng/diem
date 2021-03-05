@@ -4,6 +4,7 @@
 
 **Merged pull requests:**
 
+- Creating a small pull request for testing out some issues [\#43](https://github.com/huineng/diem/pull/43)
 - Gh [\#42](https://github.com/huineng/diem/pull/42)
 - Gh [\#41](https://github.com/huineng/diem/pull/41)
 - Gh [\#40](https://github.com/huineng/diem/pull/40)
