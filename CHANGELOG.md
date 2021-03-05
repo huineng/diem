@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased](https://github.com/huineng/diem/tree/HEAD)
+## [v1.0.0](https://github.com/huineng/diem/tree/v1.0.0) (2021-03-05)
 
 **Merged pull requests:**
 
