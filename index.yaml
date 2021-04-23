@@ -34,6 +34,39 @@ entries:
     urls:
     - https://huineng.github.io/diem/diem-1.0.2.tgz
     version: 1.0.2
+  - annotations:
+      category: Data Integration Engine Multipurpose
+    apiVersion: v2
+    appVersion: 1.0.1
+    created: "2021-04-23T10:17:21.658434806Z"
+    dependencies:
+    - name: spark-operator
+      repository: https://googlecloudplatform.github.io/spark-on-k8s-operator
+      version: 1.0.8
+    - condition: mongodb.createservice
+      name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.0.5
+    - condition: minio.createservice
+      name: minio
+      repository: https://helm.min.io/
+      version: 8.0.10
+    - condition: nats.createservice
+      name: nats
+      repository: https://nats-io.github.io/k8s/helm/charts/
+      version: 0.7.4
+    description: A Helm chart for Diem
+    digest: 86b229a24d0f6e40c00a8a1c162c7071b44e7b8990ea09f92e59d5f47f8cdedc
+    home: https://github.com/IBM/DIEM
+    icon: https://raw.githubusercontent.com/IBM/diem/main/applications/diem-help/docs/images/diem/diem_s.png
+    maintainers:
+    - email: guy_huinen@be.ibm.com
+      name: Guy Huinen
+    name: diem
+    type: application
+    urls:
+    - https://huineng.github.io/diem/diem-1.0.1.tgz
+    version: 1.0.1
   minio:
   - apiVersion: v1
     appVersion: master
@@ -67,7 +100,9 @@ entries:
       tags:
       - bitnami-common
       version: 1.x.x
-    description: NoSQL document-oriented database that stores JSON-like documents with dynamic schemas, simplifying the integration of data in content-driven applications.
+    description: NoSQL document-oriented database that stores JSON-like documents
+      with dynamic schemas, simplifying the integration of data in content-driven
+      applications.
     digest: 275c935af3fb444fff69f08245f94fa13f55d7f58470832bbbcd67009210d178
     home: https://github.com/bitnami/charts/tree/master/bitnami/mongodb
     icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
@@ -92,7 +127,8 @@ entries:
   - apiVersion: v2
     appVersion: 2.1.9
     created: "2021-04-22T09:18:20.27912+02:00"
-    description: A Helm chart for the NATS.io High Speed Cloud Native Distributed Communications Technology.
+    description: A Helm chart for the NATS.io High Speed Cloud Native Distributed
+      Communications Technology.
     digest: f65d10a6e6ba8209340dda5490d8247b9ecf6febe49448428eaa8c0fd9a677da
     home: http://github.com/nats-io/k8s
     icon: https://nats.io/img/nats-icon-color.png
@@ -125,4 +161,4 @@ entries:
     urls:
     - https://huineng.github.io/diem/charts/spark-operator-1.0.8.tgz
     version: 1.0.8
-generated: "2021-04-22T09:18:20.263098+02:00"
+generated: "2021-04-23T10:17:21.645767398Z"
