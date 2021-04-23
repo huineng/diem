@@ -35,5 +35,5 @@ jobs:
         uses: stefanprodan/helm-gh-pages@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          charts_dir: helm/diem
+          charts_dir: helm
           branch: gh-pages
